@@ -92,7 +92,7 @@ canvas {
     top: 64%;
     left: 50%;
     transform: translate(-50%, 100%);
-    font-size: 4vw;
+    font-size: 3.9vw;
 }
 #onThisDate {
     position: absolute;

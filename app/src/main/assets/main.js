@@ -23,7 +23,10 @@ var secondsAlive=0;
 var trail=[];
 var maxTrail=10000;
 var showTrail=false;
-
+var onThisDayJSON = []
+fetch('onThisDay.json')
+    .then(response => response.json())
+    .then(json => onThisDayJSON = (json));
 const ribbonImage = new Image();
 ribbonImage.src = 'ribbon.png';
 function toggleTrail() {
@@ -556,7 +559,7 @@ function updateClock(){
     const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     clockElement.textContent = formattedTime;
     var clockElement = document.getElementById("date");
-    var formattedDate = new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' });
+    var formattedDate = new Date().toLocaleDateString('en-UK', { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' });
     clockElement.textContent = formattedDate;
 
 }
@@ -564,38 +567,22 @@ function updateClock(){
 setInterval(updateClock, 1000);
 
 
-let onThisDay = [];
-
-// Get information about this day in history from English Wikipedia
-function toGlobal(x){
-    onThisDay = x
-
-}
-
-function updateOTD(){
-    let today = new Date();
-    let month = String(today.getMonth() + 1).padStart(2,'0');
-    let day = String(today.getDate()).padStart(2,'0');
-    let url = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/selected/${month}/${day}`;
-
-    var res = fetch(url)
-        .then(res => res.json())
-        .then(data => {
-        toGlobal(data['selected']);
-        });
-    updateOTDtext()
-}
-updateOTD()
 function updateOTDtext(){
-    if (onThisDay.length!=0){
-        var ageElement = document.getElementById("onThisDate");
-        var text=onThisDay[Math.floor(Math.random()*onThisDay.length)]
-        ageElement.textContent = text.year+":"+text.text;
+    if (onThisDayJSON.length==0){
+        fetch('onThisDay.json')
+            .then(response => response.json())
+            .then(json => onThisDayJSON = (json));
+    }else{
+        const now = new Date();
+        const Day = now.getDate();
+        const Month = now.getMonth() + 1; // Months are zero-based, so we add 1
+        const onThisDay = onThisDayJSON[`${Day}/${Month}`]
+        if (onThisDay.length!=0){
+            var ageElement = document.getElementById("onThisDate");
+            var text=onThisDay[Math.floor(Math.random()*onThisDay.length)]
+            ageElement.textContent = text.year+":"+text.text;
         }
+    }
 }
-function setIntervalOnFirstTick(callback, delay) {
-    callback();
-    setInterval(callback, delay);
-  }
-setIntervalOnFirstTick(updateOTD, 1000*60*60*3);//update every 3 hours
-setIntervalOnFirstTick(updateOTDtext, 1000*60);//update every minute
+setTimeout(updateOTDtext, 1000);
+setInterval(updateOTDtext, 1000*60);//update every minute
