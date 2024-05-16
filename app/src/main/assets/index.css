@@ -110,7 +110,7 @@ canvas {
     width: 60px;
     height: 34px;
     transition: opacity 0.5s ease-in-out;
-    transform: translate(-20%, 30%);
+    transform: translate(-20    %, 30%);
 
 }
 
