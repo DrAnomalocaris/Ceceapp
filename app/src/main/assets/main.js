@@ -43,6 +43,7 @@ function toggleConnectome() {
        document.getElementById("nodeHolder").style.zIndex = "0";
      }
 }
+document.getElementById("nodeHolder").style.zIndex = "-10";
 
 function toggleSound() {
     sound = document.getElementById("soundCheckbox").checked;
@@ -491,8 +492,8 @@ setInterval(updateTrail, 10);
 function drawTrail() {
 
     ctx.beginPath();
-    ctx.strokeStyle = "rgba(255,255,255,.25)";
-    ctx.lineWidth = 20;
+    ctx.strokeStyle = "rgb(64,64,64)";
+    ctx.lineWidth = 15;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
     ctx.moveTo(trail[0].x, trail[0].y);

@@ -61,6 +61,7 @@ canvas {
     top: 0;
     transition: opacity .5s;
     line-height: 0;
+
 }
 @font-face {
   font-family: 'Digital Dream Fat Narrow';
