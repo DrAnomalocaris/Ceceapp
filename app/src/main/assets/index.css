@@ -74,7 +74,6 @@ canvas {
     transition: opacity .5s;
     font-size: 22vw;
     font-family:"Digital dream";
-    src: url('DIGITALDREAMFATNARROW.ttf');
     color: #444444;
     z-index: -1;
     font-family: 'Digital Dream Fat Narrow';
@@ -87,7 +86,6 @@ canvas {
     transition: opacity .5s;
     font-size: 4vw;
     font-family:"Digital dream";
-    src: url('DIGITALDREAMFATNARROW.ttf');
     color: #444444;
     z-index: -1;
     font-family: 'Digital Dream Fat Narrow';
