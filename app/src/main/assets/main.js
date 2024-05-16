@@ -30,8 +30,8 @@ function toggleTrail() {
     showTrail = document.getElementById("trailCheckbox").checked;
 }
 function toggleClock() {
-    document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
-    document.getElementById("date").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
+    document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? ".25" : "0";
+    document.getElementById("date").style.opacity = document.getElementById("clockCheckbox").checked ? ".25" : "0";
 }
 function toggleInfo() {
     document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
@@ -246,6 +246,7 @@ function randomFood(){
         var mother = food[Math.floor(Math.random()*food.length)];
         var x = mother.x;
         var y = mother.y;
+
         x += Math.random()*100-50;
         y += Math.random()*100-50;
         x -= canvas.offsetLeft;

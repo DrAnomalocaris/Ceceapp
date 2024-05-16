@@ -75,20 +75,26 @@ canvas {
     transform: translate(-50%, -50%);
     transition: opacity .5s;
     font-size: 22vw;
+    opacity:.25;
     font-family:"Digital dream";
-    color: #444444;
-    z-index: -1;
+    color: #ffffff;
+    z-index: 1;
     font-family: 'Digital Dream Fat Narrow';
+    pointer-events: none;
+
 }
 #date {
     position: absolute;
+    opacity:.25;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity .5s;
     font-size: 4vw;
-    color: #444444;
-    z-index: -1;
+    color: #ffffff;
+    z-index: 1;
+    pointer-events: none;
+
     font-family: 'Digital Dream Fat Narrow';
 }
 #info {
@@ -101,6 +107,8 @@ canvas {
     color: #444444;
     z-index: -1;
     font-family: 'Digital Dream Fat Narrow';
+    pointer-events: none;
+
 }
 
 
