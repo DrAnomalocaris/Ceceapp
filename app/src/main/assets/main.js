@@ -32,6 +32,7 @@ function toggleTrail() {
 function toggleClock() {
     document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? ".25" : "0";
     document.getElementById("date").style.opacity = document.getElementById("clockCheckbox").checked ? ".25" : "0";
+    document.getElementById("onThisDate").style.opacity = document.getElementById("clockCheckbox").checked ? ".25" : "0";
 }
 function toggleInfo() {
     document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
@@ -561,3 +562,40 @@ function updateClock(){
 }
 
 setInterval(updateClock, 1000);
+
+
+let onThisDay = [];
+
+// Get information about this day in history from English Wikipedia
+function toGlobal(x){
+    onThisDay = x
+
+}
+
+function updateOTD(){
+    let today = new Date();
+    let month = String(today.getMonth() + 1).padStart(2,'0');
+    let day = String(today.getDate()).padStart(2,'0');
+    let url = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/selected/${month}/${day}`;
+
+    var res = fetch(url)
+        .then(res => res.json())
+        .then(data => {
+        toGlobal(data['selected']);
+        });
+    updateOTDtext()
+}
+updateOTD()
+function updateOTDtext(){
+    if (onThisDay.length!=0){
+        var ageElement = document.getElementById("onThisDate");
+        var text=onThisDay[Math.floor(Math.random()*onThisDay.length)]
+        ageElement.textContent = text.year+":"+text.text;
+        }
+}
+function setIntervalOnFirstTick(callback, delay) {
+    callback();
+    setInterval(callback, delay);
+  }
+setIntervalOnFirstTick(updateOTD, 1000*60*60*3);//update every 3 hours
+setIntervalOnFirstTick(updateOTDtext, 1000*60);//update every minute
