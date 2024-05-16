@@ -80,7 +80,7 @@ canvas {
 }
 #clock{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 22vw;
@@ -89,7 +89,7 @@ canvas {
 #date {
     position: absolute;
     opacity:.25;
-    top: 64%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, 100%);
     font-size: 3.9vw;
@@ -97,7 +97,7 @@ canvas {
 #onThisDate {
     position: absolute;
     opacity:.25;
-    top: 82%;
+    top: 66%;
     left: 50%;
     transform: translate(-48%, 0%);
     font-size: 150%;

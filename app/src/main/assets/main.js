@@ -23,10 +23,21 @@ var secondsAlive=0;
 var trail=[];
 var maxTrail=10000;
 var showTrail=false;
-var onThisDayJSON = []
-fetch('onThisDay.json')
-    .then(response => response.json())
-    .then(json => onThisDayJSON = (json));
+var onThisDayJSON = [];
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'file:///android_asset/onThisDay.json');
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    const json = JSON.parse(xhr.responseText);
+    onThisDayJSON = json;
+  } else {
+    console.error('Error loading JSON data:', xhr.statusText);
+  }
+};
+xhr.send();
+
+
+
 const ribbonImage = new Image();
 ribbonImage.src = 'ribbon.png';
 function toggleTrail() {
@@ -101,12 +112,14 @@ for (var ps in BRAIN.connectome) {
 
 function updateBrain() {
     BRAIN.update();
-    for (var ps in BRAIN.connectome) {
-        var psBox = document.getElementById(ps);
-        var neuron = BRAIN.postSynaptic[ps][BRAIN.thisState];
+    if (document.getElementById("connectomeCheckbox").checked){
+        for (var ps in BRAIN.connectome) {
+            var psBox = document.getElementById(ps);
+            var neuron = BRAIN.postSynaptic[ps][BRAIN.thisState];
 
-        psBox.style.backgroundColor = "rgba(85, 255, 85, " + Math.min(1, neuron / 50) + ")";
-        psBox.style.opacity = 1;
+            psBox.style.backgroundColor = "rgba(85, 255, 85, " + Math.min(1, neuron / 50) + ")";
+            psBox.style.opacity = 1;
+        }
     }
     let scalingFactor = 20;
     let newDir = ((BRAIN.accumleft - BRAIN.accumright) / scalingFactor);
@@ -114,6 +127,7 @@ function updateBrain() {
     //targetDir = facingDir + calculateFinalDirection(BRAIN.accumleft/200, BRAIN.accumright/200);
     targetSpeed = (Math.abs(BRAIN.accumleft) + Math.abs(BRAIN.accumright)) / (scalingFactor*5);
     speedChangeInterval = (targetSpeed - speed) / (scalingFactor*1.5);
+
 }
 
 BRAIN.randExcite();
@@ -233,7 +247,12 @@ function addFood(event) {
     x -= canvas.offsetLeft;
     y -= canvas.offsetTop;
 
-    food.push({ "x": x, "y": y ,"size": 1});
+    food.push({ "x": x,
+                "y": y ,
+                "size": 1,
+                "r":Math.floor(Math.random() * 256),
+                "g":Math.floor(Math.random() * 256),
+                "b":Math.floor(Math.random() * 256)});
 }
 function randomFood(){
     if (food.length == 0) {
@@ -242,21 +261,40 @@ function randomFood(){
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
 
-        food.push({ "x": x, "y": y,"size": 1});
+        food.push({ "x": x,
+                    "y": y ,
+                    "size": 1,
+                    "r":Math.floor(Math.random() * 256),
+                    "g":Math.floor(Math.random() * 256),
+                    "b":Math.floor(Math.random() * 256)});
 
     }
     if (Math.random() < 0.1)  {
 
         var mother = food[Math.floor(Math.random()*food.length)];
+        var colShift=100;
+        var colMin=20;
         var x = mother.x;
         var y = mother.y;
+        var r = mother.r;
+        var g = mother.g;
+        var b = mother.b;
+        r += Math.random()*colShift-colShift/2;
+        if (r>255){r=255}
+        if (r<colMin){r=colMin}
+        g += Math.random()*colShift-colShift/2;
+        if (g>255){g=255}
+        if (g<colMin){g=colMin}
+        b += Math.random()*colShift-colShift/2;
+        if (b>255){b=255}
+        if (b<colMin){b=colMin}
 
         x += Math.random()*100-50;
         y += Math.random()*100-50;
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
 
-        food.push({ "x": x, "y": y,"size": 1});
+        food.push({ "x": x, "y": y,"size": 1,"r":r,"g":g,"b":b});
     }
     if (food.length > 1000) {
         food.splice(0, 1);
@@ -270,7 +308,7 @@ function drawFood() {
         if (food[i].size < 10) {
             food[i].size += 0.5;
         }
-        circle(ctx, food[i].x, food[i].y, food[i].size, 'rgba(251,192,45,0.5)');
+        circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, .4)`);
     }
 }
 
@@ -568,10 +606,9 @@ setInterval(updateClock, 1000);
 
 
 function updateOTDtext(){
+    console.log(onThisDayJSON)
     if (onThisDayJSON.length==0){
-        fetch('onThisDay.json')
-            .then(response => response.json())
-            .then(json => onThisDayJSON = (json));
+
     }else{
         const now = new Date();
         const Day = now.getDate();
