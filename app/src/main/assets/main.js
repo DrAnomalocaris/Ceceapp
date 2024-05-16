@@ -21,7 +21,7 @@ var sound=true;
 var start=true;
 var secondsAlive=0;
 var trail=[];
-var maxTrail=10000;
+var maxtrail=10000;
 const ribbonImage = new Image();
 ribbonImage.src = 'ribbon.png';
 
@@ -483,7 +483,7 @@ function updateTrail() {
     if (food.length > 0) {
     trail.push({ x: chain.links[chain.links.length - 1].tail.x, y: chain.links[chain.links.length - 1].tail.y });
     }
-    if (trail.length > T) {
+    if (trail.length > maxtrail) {
         trail.shift();
     }
 }
