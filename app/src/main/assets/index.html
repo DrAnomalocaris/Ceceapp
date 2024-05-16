@@ -7,6 +7,8 @@
 </head>
 
 <body>
+<div class="black-overlay"></div>
+<div id='clock'>####</div>
 <canvas id='canvas'></canvas>
 <div id='nodeHolder'></div>
 <label id="toggleConnectome" class="switch">
@@ -14,7 +16,6 @@
     <span class="slider round"></span>
 
 </label>
-
 <!--<a href="https://github.com/Fantop/worm-sim">
     <img id="githubButton" src="github.svg" class="noselect">
 </a>-->
@@ -29,11 +30,15 @@
     <img id="clearButton" src="clear.svg" height="40px" class="noselect">
     -->
     <label id="age"> <div id="ageValue">0</div></label>
-
+    <label id="toggleClock" class="switch">
+        <input id="clockCheckbox" type="checkbox" checked onclick="toggleClock()">
+        <span class="slider round"></span>
+    </label>
 </div>
 
 <script type="text/javascript" src="connectome.js"></script>
 <script type="text/javascript" src="main.js"></script>
+
 </body>
 
 </html>

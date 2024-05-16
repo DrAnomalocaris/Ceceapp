@@ -25,17 +25,28 @@ var maxtrail=10000;
 const ribbonImage = new Image();
 ribbonImage.src = 'ribbon.png';
 
+function toggleClock() {
+    document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
+}
+
+
 function updateSecondsAlive() {
     secondsAlive++;
 }
 setInterval(updateSecondsAlive, 1000);
 function toggleConnectome() {
     document.getElementById("nodeHolder").style.opacity = document.getElementById("connectomeCheckbox").checked ? "1" : "0";
+     if (!document.getElementById("connectomeCheckbox").checked) {
+       document.getElementById("nodeHolder").style.zIndex = "-10";
+     } else {
+       document.getElementById("nodeHolder").style.zIndex = "0";
+     }
 }
 
 function toggleSound() {
     sound = document.getElementById("soundCheckbox").checked;
 }
+
 BRAIN.setup();
 for (var ps in BRAIN.connectome) {
     var nameBox = document.createElement('span');
@@ -352,7 +363,7 @@ function draw() {
     // Draw the bow emoji at coordinates (p1.x, p1.y)
     ctx.drawImage(ribbonImage, 0, 0, ribbonImage.width, ribbonImage.height, x-11, y-20, ribbonImage.width / 75, ribbonImage.height / 75);
 
-    ctx.font = '20px sans-serif'; // Set font size and family
+    //ctx.font = '20px sans-serif'; // Set font size and family
 
 
     // Save the current state of the canvas context
@@ -360,7 +371,7 @@ function draw() {
 
     // Set the text style
     ctx.fillStyle = "rgba(128, 128, 128, 0.5)"; // Gray color with reduced opacity
-    ctx.font = "50px sans-serif"; // Set font size and family
+    //ctx.font = "50px sans-serif"; // Set font size and family
 
     // Determine the position to center the text
     //var text = "noms: " + nomCounter;
@@ -516,3 +527,15 @@ let timer = setTimeout(makeElementsInvisible, inactivityTime);
 ['mousemove', 'keydown', 'scroll', 'click'].forEach(event => {
   document.addEventListener(event, resetInactivityTimer, true);
 });
+
+function updateClock(){
+    var clockElement = document.getElementById("clock");
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    clockElement.textContent = formattedTime;
+
+
+}
+setInterval(updateClock, 1000);

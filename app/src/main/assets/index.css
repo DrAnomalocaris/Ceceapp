@@ -6,13 +6,22 @@ body {
 
 canvas {
     display: block;
-    background-color: #000000;
+    /* background-color: #000000; */
 }
-
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: -2;
+}
 #nomCounter, #age {
     font-size: 40px; /* Adjust font size as needed */
     color: #888; /* Light gray color */
     align-items: center;
+    font-family:"Digital dream";
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -53,6 +62,25 @@ canvas {
     transition: opacity .5s;
     line-height: 0;
 }
+@font-face {
+  font-family: 'Digital Dream Fat Narrow';
+  src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
+}
+#clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .5s;
+    font-size: 22vw;
+    font-family:"Digital dream";
+    src: url('DIGITALDREAMFATNARROW.ttf');
+    color: #444444;
+    z-index: -1;
+    font-family: 'Digital Dream Fat Narrow';
+
+}
+
 
 .switch {
     position: relative;
@@ -74,7 +102,7 @@ canvas {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #928d8d;
+    background-color: #112511 ;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -92,7 +120,7 @@ canvas {
 }
 
 input:checked+.slider {
-    background-color: #112511;
+    background-color: #928d8d;
 }
 
 input:focus+.slider {
