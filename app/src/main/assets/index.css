@@ -62,6 +62,7 @@ canvas {
     transition: opacity .5s;
     line-height: 0;
 
+
 }
 @font-face {
   font-family: 'Digital Dream Fat Narrow';
@@ -86,7 +87,17 @@ canvas {
     transform: translate(-50%, -50%);
     transition: opacity .5s;
     font-size: 4vw;
-    font-family:"Digital dream";
+    color: #444444;
+    z-index: -1;
+    font-family: 'Digital Dream Fat Narrow';
+}
+#info {
+    position: absolute;
+    top: 99%;
+    left: 1%;
+    transform: translate(0%, -100%);
+    transition: opacity .5s;
+    font-size: 2vw;
     color: #444444;
     z-index: -1;
     font-family: 'Digital Dream Fat Narrow';
@@ -99,6 +110,7 @@ canvas {
     width: 60px;
     height: 34px;
     transition: opacity 0.5s ease-in-out;
+    transform: translate(-20%, 30%);
 
 }
 
@@ -152,12 +164,7 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-#toggleConnectome {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    z-index: 10;
-}
+
 
 #githubButton {
     position: absolute;
@@ -170,9 +177,13 @@ input:checked+.slider:before {
 #buttons {
     position: absolute;
     /*display: inline-block;*/
-    bottom: 0px;
-    left: 100px ;
+    bottom: 10%;
+    left: 1% ;
+    transition: opacity .5s;
     cursor: pointer;
+    font-size: 1.5vw;
+    color: #444444;
+    font-family: 'Digital Dream Fat Narrow';
 }
 
 .noselect {

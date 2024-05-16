@@ -13,29 +13,37 @@
 
 <canvas id='canvas'></canvas>
 <div id='nodeHolder'></div>
-<label id="toggleConnectome" class="switch">
-    <input id="connectomeCheckbox" type="checkbox" **checked** onclick="toggleConnectome()">
-    <span class="slider round"></span>
+<div id='info'>
+    Noms: <span id='nomValue'></span>
+    <br>
+    Age:<span id="ageValue">0</span>
+</div>
 
-</label>
-<!--<a href="https://github.com/Fantop/worm-sim">
-    <img id="githubButton" src="github.svg" class="noselect">
-</a>-->
 <div id="buttons">
-    <label id="nomCounter">noms: <span id="nomValue">0</span></label>
-    <label id="toggleSound" class="switch">
+    Brain- <label id="toggleConnectome" class="switch">
+        <input id="connectomeCheckbox" type="checkbox" **checked** onclick="toggleConnectome()">
+        <span class="slider round"></span>
+    </label>
+    <br>
+    Sound- <label id="toggleSound" class="switch">
         <input id="soundCheckbox" type="checkbox" checked onclick="toggleSound()">
         <span class="slider round"></span>
     </label>
-    <!-- id="centerButton" src="center.svg" height="40px" class="noselect">
-
-    <img id="clearButton" src="clear.svg" height="40px" class="noselect">
-    -->
-    <label id="age"> <div id="ageValue">0</div></label>
-    <label id="toggleClock" class="switch">
+    <br>
+    Clock- <label id="toggleClock" class="switch">
         <input id="clockCheckbox" type="checkbox" checked onclick="toggleClock()">
         <span class="slider round"></span>
     </label>
+    <br>
+    Trail- <label id="toggleTrail" class="switch">
+    <input id="trailCheckbox" type="checkbox" **checked** onclick="toggleTrail()">
+    <span class="slider round"></span>
+    </label>
+    <br>
+    Info-- <label id="toggleInfo" class="switch">
+    <input id="infoCheckbox" type="checkbox" checked onclick="toggleInfo()">
+    <span class="slider round"></span>
+
 </div>
 
 <script type="text/javascript" src="connectome.js"></script>

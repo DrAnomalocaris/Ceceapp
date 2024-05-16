@@ -21,13 +21,20 @@ var sound=true;
 var start=true;
 var secondsAlive=0;
 var trail=[];
-var maxtrail=10000;
+var maxTrail=10000;
+var showTrail=false;
+
 const ribbonImage = new Image();
 ribbonImage.src = 'ribbon.png';
-
+function toggleTrail() {
+    showTrail = document.getElementById("trailCheckbox").checked;
+}
 function toggleClock() {
     document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
     document.getElementById("date").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
+}
+function toggleInfo() {
+    document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
 }
 
 
@@ -335,7 +342,9 @@ function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawFood();
-    drawTrail();
+    if (showTrail){
+        drawTrail();
+        }
     circle(ctx, target.x, target.y, 5, 'rgba(255,182,193,0.1)');
 
     var link = chain.links[0];
@@ -483,7 +492,7 @@ function updateTrail() {
     if (food.length > 0) {
     trail.push({ x: chain.links[chain.links.length - 1].tail.x, y: chain.links[chain.links.length - 1].tail.y });
     }
-    if (trail.length > maxtrail) {
+    if (trail.length > maxTrail) {
         trail.shift();
     }
 }
@@ -508,7 +517,7 @@ function drawTrail() {
 let inactivityTime = 5000;
 
 function makeElementsInvisible() {
-  const elements = document.querySelectorAll('.switch');
+  const elements = document.querySelectorAll('#buttons');
   elements.forEach(element => {
     element.style.opacity=0;
   });
@@ -517,7 +526,7 @@ function makeElementsInvisible() {
 function resetInactivityTimer() {
   clearTimeout(timer);
   timer = setTimeout(makeElementsInvisible, inactivityTime);
-  const elements = document.querySelectorAll('.switch');
+  const elements = document.querySelectorAll('#buttons');
   elements.forEach(element => {
     element.style.opacity=1;
   });
