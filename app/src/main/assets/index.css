@@ -59,6 +59,8 @@ canvas {
     display: inline-block;
     width: 60px;
     height: 34px;
+    transition: opacity 0.5s ease-in-out;
+
 }
 
 .switch input {

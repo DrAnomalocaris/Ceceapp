@@ -491,3 +491,28 @@ function drawTrail() {
     ctx.stroke();
     ctx.closePath();
 }
+
+let inactivityTime = 5000;
+
+function makeElementsInvisible() {
+  const elements = document.querySelectorAll('.switch');
+  elements.forEach(element => {
+    element.style.opacity=0;
+  });
+}
+
+function resetInactivityTimer() {
+  clearTimeout(timer);
+  timer = setTimeout(makeElementsInvisible, inactivityTime);
+  const elements = document.querySelectorAll('.switch');
+  elements.forEach(element => {
+    element.style.opacity=1;
+  });
+}
+
+let timer = setTimeout(makeElementsInvisible, inactivityTime);
+
+// Reset timer on user interactions
+['mousemove', 'keydown', 'scroll', 'click'].forEach(event => {
+  document.addEventListener(event, resetInactivityTimer, true);
+});
