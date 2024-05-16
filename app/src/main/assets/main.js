@@ -27,6 +27,7 @@ ribbonImage.src = 'ribbon.png';
 
 function toggleClock() {
     document.getElementById("clock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
+    document.getElementById("date").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
 }
 
 
@@ -535,7 +536,10 @@ function updateClock(){
     const minutes = now.getMinutes();
     const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     clockElement.textContent = formattedTime;
-
+    var clockElement = document.getElementById("date");
+    var formattedDate = new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'numeric', year: 'numeric' });
+    clockElement.textContent = formattedDate;
 
 }
+
 setInterval(updateClock, 1000);

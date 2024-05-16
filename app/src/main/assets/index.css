@@ -78,7 +78,19 @@ canvas {
     color: #444444;
     z-index: -1;
     font-family: 'Digital Dream Fat Narrow';
-
+}
+#date {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .5s;
+    font-size: 4vw;
+    font-family:"Digital dream";
+    src: url('DIGITALDREAMFATNARROW.ttf');
+    color: #444444;
+    z-index: -1;
+    font-family: 'Digital Dream Fat Narrow';
 }
 
 
