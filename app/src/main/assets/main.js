@@ -36,6 +36,13 @@ function toggleClock() {
 function toggleInfo() {
     document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
 }
+function toggleClean() {
+    food=[];
+    trail=[];
+    setTimeout(() => {
+        document.getElementById("cleanCheckbox").checked=true;
+    }, 250);
+}
 
 
 function updateSecondsAlive() {
