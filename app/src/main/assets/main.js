@@ -586,7 +586,7 @@ function drawTrail() {
     ctx.closePath();
 }
 
-let inactivityTime = 5000;
+let inactivityTime = 2500;
 
 function makeElementsInvisible() {
   const elements = document.querySelectorAll('#buttons');
@@ -605,11 +605,16 @@ function resetInactivityTimer() {
 }
 
 let timer = setTimeout(makeElementsInvisible, inactivityTime);
-
 // Reset timer on user interactions
-['mousemove', 'keydown', 'scroll', 'click'].forEach(event => {
-  document.addEventListener(event, resetInactivityTimer, true);
+['mousemove', 'keydown', 'touchstart', 'click'].forEach(event => {
+  document.addEventListener(event, (e) => {
+    const target = e.target.closest('#buttons');
+    if (target) {
+      resetInactivityTimer();
+    }
+  }, true);
 });
+
 
 function updateClock(){
     var clockElement = document.getElementById("clock");
