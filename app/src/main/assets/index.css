@@ -69,6 +69,7 @@ canvas {
   src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
 }
 #centralClock{
+    background-color: #000000;
     position: absolute;
     left:50%;
     top:50%;
@@ -88,6 +89,7 @@ canvas {
     font-size: 3.9vw;
 }
 #onThisDate {
+
     font-size: 190%;
 }
 
