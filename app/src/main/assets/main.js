@@ -638,3 +638,12 @@ function updateOTDtext(){
  }
 updateOTDtext();
 setInterval(updateOTDtext,60*1000);//update every minute
+
+
+setTimeout(function (){
+    var curtain = document.getElementById("black-curtain");
+    curtain.style.opacity=0;
+
+    },
+    1000
+)
