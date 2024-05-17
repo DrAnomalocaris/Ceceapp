@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Digital dream Fat Skew';
-    color: #888888;
+    color: #777777;
     pointer-events: none;
 }
 
@@ -103,7 +103,14 @@ canvas {
   font-family: 'Digital dream Fat narrow';
   src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'Prudencia';
+  src: url('Prudencia Digital.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'dot';
+  src: url('advanced_dot_digital-7.ttf') format('truetype');
+}
 #centralClock{
     position: absolute;
     left:50%;
@@ -123,14 +130,24 @@ canvas {
 
 }
 #onThisDate {
-    font-family: 'Digital dream Fat narrow';
-    padding-top: 20px;
     font-size: 190%;
-    line-height: 1.5em;
-    font-size: clamp(30px, 20%, 45px);
-
+    line-height: 1.2em;
+    font-size: clamp(30px, 20vh, 45px);
+    font-family: 'terminal';
+}
+#onThisDate img{
+    position:relative;
+    left: 25vw
 }
 
+@font-face {
+  font-family: 'Dash';
+  src: url('dash_digital-7.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'terminal';
+  src: url('terminal-grotesque.ttf') format('truetype');
+}
 #info {
     position: absolute;
     top: 99%;
@@ -140,8 +157,6 @@ canvas {
     font-size: 2vw;
     z-index: -1;
     font-family: 'Digital dream Fat narrow';
-
-
 }
 
 

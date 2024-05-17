@@ -623,7 +623,8 @@ function updateOTDtext(){
     var ageElement = document.getElementById("onThisDate");
     if (Math.random()<quoteProbability){
     var text=onThisDay.quotes[Math.floor(Math.random()*onThisDay.quotes.length)];
-    ageElement.textContent = text;
+    //var text=onThisDay.quotes[onThisDay.quotes.length - 1];
+    ageElement.innerHTML = text;
 
     }else{
         const now = new Date();
