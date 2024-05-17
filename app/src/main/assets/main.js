@@ -645,5 +645,5 @@ setTimeout(function (){
     curtain.style.opacity=0;
 
     },
-    1000
+    3000
 )

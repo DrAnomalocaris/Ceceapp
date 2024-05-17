@@ -18,25 +18,36 @@ canvas {
   z-index: -2;
 }
 #black-curtain{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #001100;
-  transition: opacity 1s ease-in;
-  z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transition: opacity 1s ease-in;
+    z-index: 10;
+
 }
 
-#black-curtain img {
+#black-curtain img{
+  width: 66vw;
+
+}
+#splashCredits {
   position: absolute;
-  align-items: center;
-  max-width: 50%; /* Replace 50% with the desired maximum width */
-  max-height: 50%; /* Replace 50% with the desired maximum height */  top:50%;
+  top:50%;
   left:50%;
   transform: translate(-50%, -50%); /* Center the element */
-}
+  align-items: center;
+  font-family: 'Digital Dream Fat Narrow';
+  color: #888888;
+  pointer-events: none;
+  text-align: center;
+  font-size: 2vw;
+  opacity:1;
 
+
+}
 #nomCounter, #age {
     font-size: 40px; /* Adjust font size as needed */
     color: #888; /* Light gray color */
@@ -86,7 +97,7 @@ canvas {
 }
 @font-face {
   font-family: 'Digital Dream Fat Narrow';
-  src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
+  src: url('Digital dream Fat Skew.ttf') format('truetype');
 }
 
 #centralClock{
