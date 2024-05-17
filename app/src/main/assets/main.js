@@ -642,11 +642,15 @@ function updateOTDtext(){
     }else{
         const now = new Date();
         const Day = now.getDate();
+        const currYear= now.getFullYear();
         const Month = now.getMonth() + 1; // Months are zero-based, so we add 1
         const onToday = onThisDay[`${Day}/${Month}`]
         if (onToday.length!=0){
             var text=onToday[Math.floor(Math.random()*onToday.length)];
-            ageElement.textContent = text.year+":"+text.text;
+            var yearString = text.year;
+            var yearsAgo = currYear - Number(yearString)
+            var string = `${yearString} (${yearsAgo} years ago) - ${text.text}`
+            ageElement.textContent = string;
         }
     }
  }
