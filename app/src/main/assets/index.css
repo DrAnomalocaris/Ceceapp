@@ -115,28 +115,31 @@ canvas {
 }
 #centralClock{
     position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%, -50%); /* Center the element */
+    left:15%;
+    right:15%;
+    top:25%;
+    bottom:6%;
     transition: opacity .5s;
     z-index: 1;
     pointer-events: none;
-        pointer-events: none;
 
 }
 #clock{
-    font-size: 22vw;
+    font-size: 22vh;
     text-align: center;
 }
 #date {
-    font-size: 3.9vw;
+    font-size: 3.9vh;
     text-align: center;
 
 }
 #onThisDate {
-    font-size: 190%;
+    position:relative;
+    top:0%;
+    left:0%;
+    right:0%;
     line-height: 1.2em;
-    font-size: clamp(30px, 20vh, 45px);
+    font-size: clamp(1.5rem, 5vh,34rem);
     font-family: 'terminal';
 }
 #onThisDate img{

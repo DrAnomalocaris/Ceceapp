@@ -655,7 +655,7 @@ function updateOTDtext(){
     }
  }
 updateOTDtext();
-setInterval(updateOTDtext,1000*60);//update every minute
+setInterval(updateOTDtext,60*1000);//update every minute
 
 
 setTimeout(function (){
@@ -664,19 +664,4 @@ setTimeout(function (){
 
     },
     3000
-)
-
-setTimeout(function (){
-    var curtain = document.getElementById("black-curtain");
-    curtain.style.opacity=0;
-
-    },
-    3000
-)
-setTimeout(function (){
-    var curtain = document.getElementById("black-curtain");
-    curtain.remove();
-
-    },
-    4000
 )
