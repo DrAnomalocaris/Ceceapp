@@ -28,130 +28,6 @@ var showTrail=false;
 var quoteProbability=.25;
 var shakeFoodDistance=1;
 
-//var onThisDayJSON = [];
-//const xhr = new XMLHttpRequest();
-//xhr.open('GET', 'file:///android_asset/onThisDay.json');
-//xhr.onload = function() {
-//  if (xhr.status === 200) {
-//    const json = JSON.parse(xhr.responseText);
-//    onThisDayJSON = json;
-//  } else {
-//    console.error('Error loading JSON data:', xhr.statusText);
-//  }
-//};
-//xhr.send();
-
-
-const ribbonImage = new Image();
-ribbonImage.src = 'ribbon.png';
-function toggleTrail() {
-    showTrail = document.getElementById("trailCheckbox").checked;
-}
-function toggleClock() {
-    document.getElementById("centralClock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
-}
-function toggleInfo() {
-    document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
-}
-function toggleClean() {
-    food=[];
-    trail=[];
-    setTimeout(() => {
-        document.getElementById("cleanCheckbox").checked=true;
-    }, 250);
-}
-function toggleNom(){
-    nomSound =  document.getElementById("nomCheckbox").checked ? nomSound2 :nomSound1 ;
-    nomSound.play();
-}
-function toggleQuote(){
-    document.getElementById("onThisDate").style.opacity =  document.getElementById("quoteCheckbox").checked ? "1" :"0" ;
-}
-
-function updateSecondsAlive() {
-    secondsAlive++;
-}
-setInterval(updateSecondsAlive, 1000);
-function toggleConnectome() {
-    document.getElementById("nodeHolder").style.opacity = document.getElementById("connectomeCheckbox").checked ? "1" : "0";
-     if (!document.getElementById("connectomeCheckbox").checked) {
-       document.getElementById("nodeHolder").style.zIndex = "-10";
-     } else {
-       document.getElementById("nodeHolder").style.zIndex = "0";
-     }
-}
-document.getElementById("nodeHolder").style.zIndex = "-10";
-
-function toggleSound() {
-    sound = document.getElementById("soundCheckbox").checked;
-}
-
-BRAIN.setup();
-for (var ps in BRAIN.connectome) {
-    var nameBox = document.createElement('span');
-    nameBox.innerHTML = ps;
-    nameBox.style.color = "white";
-    nameBox.style.fontSize = "10px"; // Set font size
-    if (["RIML", "RIMR", "RICL", "RICR"].includes(ps)) {
-        nameBox.style.color = "red"; // Change the color of innerHTML
-    }
-    if (["PVDL", "PVDR"].includes(ps)) {
-        nameBox.style.color = "yellow"; // Change the color of innerHTML
-    }
-    if (["ASEL", "ASER"].includes(ps)) {
-        nameBox.style.color = "green"; // Change the color of innerHTML
-    }
-
-    //nameBox.id = ps;
-    //nameBox.className = "brainNodeName";
-    nameBox.cols = 3;
-    nameBox.rows = 1;
-    nameBox.id = ps;
-    nameBox.className = "brainNode";
-    document.getElementById("nodeHolder").appendChild(nameBox);
-
-    //var newBox = document.createElement('span');
-    //newBox.cols = 3;
-    //newBox.rows = 1;
-    //newBox.id = ps;
-    //newBox.className = "brainNode";
-    //document.getElementById("nodeHolder").appendChild(newBox);
-}
-
-function updateBrain() {
-    BRAIN.update();
-    if (document.getElementById("connectomeCheckbox").checked){
-        for (var ps in BRAIN.connectome) {
-            var psBox = document.getElementById(ps);
-            var neuron = BRAIN.postSynaptic[ps][BRAIN.thisState];
-
-            psBox.style.backgroundColor = "rgba(85, 255, 85, " + Math.min(1, neuron / 50) + ")";
-            psBox.style.opacity = 1;
-        }
-    }
-    let scalingFactor = 20;
-    let newDir = ((BRAIN.accumleft - BRAIN.accumright) / scalingFactor);
-    targetDir = facingDir + (newDir * Math.PI);
-    //targetDir = facingDir + calculateFinalDirection(BRAIN.accumleft/200, BRAIN.accumright/200);
-    targetSpeed = (Math.abs(BRAIN.accumleft) + Math.abs(BRAIN.accumright)) / (scalingFactor*5);
-    speedChangeInterval = (targetSpeed - speed) / (scalingFactor*1.5);
-
-}
-
-BRAIN.randExcite();
-setInterval(updateBrain, 500);
-
-function calculateFinalDirection(leftPercentage, rightPercentage) {
-    const maxTurnAngle = Math.PI / 2; // 90 degrees in radians
-    const leftTurnAngle = leftPercentage * maxTurnAngle;
-    const rightTurnAngle = rightPercentage * maxTurnAngle;
-
-    const finalDirection = rightTurnAngle - leftTurnAngle;
-
-    return finalDirection;
-  }
-
-//http://jsfiddle.net/user/ARTsinn/fiddles/
 
 /* IK Segment */
 
@@ -221,6 +97,161 @@ var IKChain = function(size, interval) {
         point = link.tail;
     }
 };
+
+
+//
+//   check cache and load existing worm
+//
+if (window.localStorage.hasOwnProperty('postsynaptic')) {
+  BRAIN.setup(
+    JSON.parse(window.localStorage.getItem('postsynaptic')),
+    window.localStorage.getItem('state'),
+  );
+  food = JSON.parse(window.localStorage.getItem('food'));
+  secondsAlive = window.localStorage.getItem('secondsAlive');
+  nomCounter = window.localStorage.getItem('nomCounter');
+  var chain = JSON.parse(window.localStorage.getItem('chain'));
+  console.log("localstorage: loaded from memory")
+} else {
+  BRAIN.setup();
+  console.log("localstorage: made new worm")
+
+}
+
+var chain = new IKChain(chainLength, 1);
+
+BRAIN.setup()
+//var onThisDayJSON = [];
+//const xhr = new XMLHttpRequest();
+//xhr.open('GET', 'file:///android_asset/onThisDay.json');
+//xhr.onload = function() {
+//  if (xhr.status === 200) {
+//    const json = JSON.parse(xhr.responseText);
+//    onThisDayJSON = json;
+//  } else {
+//    console.error('Error loading JSON data:', xhr.statusText);
+//  }
+//};
+//xhr.send();
+
+
+const ribbonImage = new Image();
+ribbonImage.src = 'ribbon.png';
+function toggleTrail() {
+    showTrail = document.getElementById("trailCheckbox").checked;
+}
+function toggleClock() {
+    document.getElementById("centralClock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
+}
+function toggleInfo() {
+    document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";
+}
+function toggleClean() {
+    food=[];
+    trail=[];
+    setTimeout(() => {
+        document.getElementById("cleanCheckbox").checked=true;
+    }, 250);
+}
+function toggleCache() {
+    window.localStorage.clear();
+    console.log("Cache deleted")
+    setTimeout(() => {
+        document.getElementById("cacheCheckbox").checked=true;
+    }, 250);
+}
+
+function toggleNom(){
+    nomSound =  document.getElementById("nomCheckbox").checked ? nomSound2 :nomSound1 ;
+    nomSound.play();
+}
+function toggleQuote(){
+    document.getElementById("onThisDate").style.opacity =  document.getElementById("quoteCheckbox").checked ? "1" :"0" ;
+}
+
+function updateSecondsAlive() {
+    secondsAlive++;
+}
+setInterval(updateSecondsAlive, 1000);
+function toggleConnectome() {
+    document.getElementById("nodeHolder").style.opacity = document.getElementById("connectomeCheckbox").checked ? "1" : "0";
+     if (!document.getElementById("connectomeCheckbox").checked) {
+       document.getElementById("nodeHolder").style.zIndex = "-10";
+     } else {
+       document.getElementById("nodeHolder").style.zIndex = "0";
+     }
+}
+document.getElementById("nodeHolder").style.zIndex = "-10";
+
+function toggleSound() {
+    sound = document.getElementById("soundCheckbox").checked;
+}
+
+for (var ps in BRAIN.connectome) {
+    var nameBox = document.createElement('span');
+    nameBox.innerHTML = ps;
+    nameBox.style.color = "white";
+    nameBox.style.fontSize = "10px"; // Set font size
+    if (["RIML", "RIMR", "RICL", "RICR"].includes(ps)) {
+        nameBox.style.color = "red"; // Change the color of innerHTML
+    }
+    if (["PVDL", "PVDR"].includes(ps)) {
+        nameBox.style.color = "yellow"; // Change the color of innerHTML
+    }
+    if (["ASEL", "ASER"].includes(ps)) {
+        nameBox.style.color = "green"; // Change the color of innerHTML
+    }
+
+    //nameBox.id = ps;
+    //nameBox.className = "brainNodeName";
+    nameBox.cols = 3;
+    nameBox.rows = 1;
+    nameBox.id = ps;
+    nameBox.className = "brainNode";
+    document.getElementById("nodeHolder").appendChild(nameBox);
+
+    //var newBox = document.createElement('span');
+    //newBox.cols = 3;
+    //newBox.rows = 1;
+    //newBox.id = ps;
+    //newBox.className = "brainNode";
+    //document.getElementById("nodeHolder").appendChild(newBox);
+}
+
+function updateBrain() {
+    BRAIN.update();
+    if (document.getElementById("connectomeCheckbox").checked){
+        for (var ps in BRAIN.connectome) {
+            var psBox = document.getElementById(ps);
+            var neuron = BRAIN.postSynaptic[ps][BRAIN.thisState];
+
+            psBox.style.backgroundColor = "rgba(85, 255, 85, " + Math.min(1, neuron / 50) + ")";
+            psBox.style.opacity = 1;
+        }
+    }
+    let scalingFactor = 20;
+    let newDir = ((BRAIN.accumleft - BRAIN.accumright) / scalingFactor);
+    targetDir = facingDir + (newDir * Math.PI);
+    //targetDir = facingDir + calculateFinalDirection(BRAIN.accumleft/200, BRAIN.accumright/200);
+    targetSpeed = (Math.abs(BRAIN.accumleft) + Math.abs(BRAIN.accumright)) / (scalingFactor*5);
+    speedChangeInterval = (targetSpeed - speed) / (scalingFactor*1.5);
+
+}
+
+BRAIN.randExcite();
+setInterval(updateBrain, 500);
+
+function calculateFinalDirection(leftPercentage, rightPercentage) {
+    const maxTurnAngle = Math.PI / 2; // 90 degrees in radians
+    const leftTurnAngle = leftPercentage * maxTurnAngle;
+    const rightTurnAngle = rightPercentage * maxTurnAngle;
+
+    const finalDirection = rightTurnAngle - leftTurnAngle;
+
+    return finalDirection;
+  }
+
+//http://jsfiddle.net/user/ARTsinn/fiddles/
 
 /* Test */
 
@@ -339,7 +370,6 @@ var target = {
     y: window.innerHeight / 2
 };
 
-var chain = new IKChain(chainLength, 1);
 
 function update() {
 
@@ -661,7 +691,16 @@ setInterval(updateOTDtext,60*1000);//update every minute
 setTimeout(function (){
     var curtain = document.getElementById("black-curtain");
     curtain.style.opacity=0;
-
+    document.getElementById("black-curtain").remove();
     },
     3000
 )
+
+function saveCache(){
+    window.localStorage.setItem("postsynaptic",JSON.stringify(BRAIN.postSynaptic))
+    window.localStorage.setItem("state",BRAIN.thisState)
+    window.localStorage.setItem("secondsAlive",secondsAlive)
+    window.localStorage.setItem("nomCounter",nomCounter)
+    window.localStorage.setItem("food",JSON.stringify(food))
+}
+setInterval(saveCache,10000)
