@@ -649,7 +649,7 @@ function updateOTDtext(){
             var text=onToday[Math.floor(Math.random()*onToday.length)];
             var yearString = text.year;
             var yearsAgo = currYear - Number(yearString)
-            var string = `${yearString} (${yearsAgo} years ago) - ${text.text}`
+            var string = `${yearString} (${yearsAgo} years ago): ${text.text}`
             ageElement.textContent = string;
         }
     }
