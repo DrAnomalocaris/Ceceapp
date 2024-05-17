@@ -4,7 +4,6 @@ body {
     padding: 0;
     font-family: 'Digital dream Fat Skew';
     color: #777777;
-    pointer-events: none;
 }
 
 canvas {
@@ -47,6 +46,7 @@ canvas {
   font-size: 2vw;
   opacity:1;
   line-height: 1.8em;
+    pointer-events: none;
 
 
 }
@@ -60,6 +60,7 @@ canvas {
     -ms-user-select: none;
     user-select: none;
     display: inline-block;
+    pointer-events: none;
 
 }
 
@@ -84,6 +85,7 @@ canvas {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    pointer-events: none;
 
 }
 
@@ -119,6 +121,8 @@ canvas {
     transition: opacity .5s;
     z-index: 1;
     pointer-events: none;
+        pointer-events: none;
+
 }
 #clock{
     font-size: 22vw;
@@ -157,6 +161,8 @@ canvas {
     font-size: 2vw;
     z-index: -1;
     font-family: 'Digital dream Fat narrow';
+        pointer-events: none;
+
 }
 
 
@@ -240,7 +246,7 @@ input:checked+.slider:before {
     background-color: #000000;
     cursor: pointer;
     font-size: 1.5vw;
-    z-index:100;
+    z-index:1;
 
 }
 

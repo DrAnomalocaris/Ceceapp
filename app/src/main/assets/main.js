@@ -16,7 +16,9 @@ var targetSpeed = 0;
 var speedChangeInterval = 0;
 var food = [];
 var nomCounter=0;
-var nomSound = new Audio('nom2.mp3');
+var nomSound1= new Audio('nom.mp3');
+var nomSound2= new Audio('nom2.mp3');
+var nomSound =nomSound2;
 var sound=true;
 var start=true;
 var secondsAlive=0;
@@ -58,7 +60,13 @@ function toggleClean() {
         document.getElementById("cleanCheckbox").checked=true;
     }, 250);
 }
-
+function toggleNom(){
+    nomSound =  document.getElementById("nomCheckbox").checked ? nomSound2 :nomSound1 ;
+    nomSound.play();
+}
+function toggleQuote(){
+    document.getElementById("onThisDate").style.opacity =  document.getElementById("quoteCheckbox").checked ? "1" :"0" ;
+}
 
 function updateSecondsAlive() {
     secondsAlive++;
@@ -308,7 +316,7 @@ function drawFood() {
         if (food[i].size < 10) {
             food[i].size += 0.5;
         }
-        circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, 1)`);
+        circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, 0.5)`);
     }
 }
 
@@ -647,4 +655,19 @@ setTimeout(function (){
 
     },
     3000
+)
+
+setTimeout(function (){
+    var curtain = document.getElementById("black-curtain");
+    curtain.style.opacity=0;
+
+    },
+    3000
+)
+setTimeout(function (){
+    var curtain = document.getElementById("black-curtain");
+    curtain.remove();
+
+    },
+    4000
 )
