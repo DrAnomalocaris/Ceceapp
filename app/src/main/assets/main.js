@@ -24,6 +24,8 @@ var trail=[];
 var maxTrail=10000;
 var showTrail=false;
 var quoteProbability=.25;
+var shakeFoodDistance=1;
+
 //var onThisDayJSON = [];
 //const xhr = new XMLHttpRequest();
 //xhr.open('GET', 'file:///android_asset/onThisDay.json');
@@ -309,6 +311,20 @@ function drawFood() {
         circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, 1)`);
     }
 }
+
+function shakeFood(){
+    for (var i = 0; i < food.length; i++) {
+            food[i].x+= Math.random()*shakeFoodDistance-shakeFoodDistance/2;
+            food[i].y+= Math.random()*shakeFoodDistance-shakeFoodDistance/2;
+            if (food[i].x>canvas.width){food[i].x=canvas.width};
+            if (food[i].y>canvas.height){food[i].y=canvas.height};
+            if (food[i].x<0){food[i].x=0};
+            if (food[i].y<0){food[i].y=0};
+
+        }
+}
+setInterval(shakeFood, 50);
+
 
 var target = {
     x: window.innerWidth / 2,
