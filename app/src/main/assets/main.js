@@ -44,7 +44,7 @@ function toggleTrail() {
     showTrail = document.getElementById("trailCheckbox").checked;
 }
 function toggleClock() {
-    document.getElementById("centralClock").style.opacity = document.getElementById("clockCheckbox").checked ? ".4" : "0";
+    document.getElementById("centralClock").style.opacity = document.getElementById("clockCheckbox").checked ? "1" : "0";
 }
 function toggleInfo() {
     document.getElementById("info").style.opacity = document.getElementById("infoCheckbox").checked ? "1" : "0";

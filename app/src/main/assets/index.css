@@ -69,15 +69,13 @@ canvas {
   src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
 }
 #centralClock{
-    background-color: #000000;
     position: absolute;
     left:50%;
     top:50%;
     transform: translate(-50%, -50%); /* Center the element */
     transition: opacity .5s;
-    opacity:.4;
     font-family: 'Digital Dream Fat Narrow';
-    color: #ffffff;
+    color: #444444;
     z-index: 1;
     pointer-events: none;
 }
