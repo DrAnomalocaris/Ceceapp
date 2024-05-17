@@ -23,19 +23,19 @@ var secondsAlive=0;
 var trail=[];
 var maxTrail=10000;
 var showTrail=false;
-var onThisDayJSON = [];
-const xhr = new XMLHttpRequest();
-xhr.open('GET', 'file:///android_asset/onThisDay.json');
-xhr.onload = function() {
-  if (xhr.status === 200) {
-    const json = JSON.parse(xhr.responseText);
-    onThisDayJSON = json;
-  } else {
-    console.error('Error loading JSON data:', xhr.statusText);
-  }
-};
-xhr.send();
-
+var quoteProbability=.25;
+//var onThisDayJSON = [];
+//const xhr = new XMLHttpRequest();
+//xhr.open('GET', 'file:///android_asset/onThisDay.json');
+//xhr.onload = function() {
+//  if (xhr.status === 200) {
+//    const json = JSON.parse(xhr.responseText);
+//    onThisDayJSON = json;
+//  } else {
+//    console.error('Error loading JSON data:', xhr.statusText);
+//  }
+//};
+//xhr.send();
 
 
 const ribbonImage = new Image();
@@ -599,25 +599,26 @@ function updateClock(){
     clockElement.textContent = formattedDate;
 
 }
-
+updateClock()
 setInterval(updateClock, 1000);
 
 
 function updateOTDtext(){
-    console.log(onThisDayJSON)
-    if (onThisDayJSON.length==0){
+    var ageElement = document.getElementById("onThisDate");
+    if (Math.random()<quoteProbability){
+    var text=onThisDay.quotes[Math.floor(Math.random()*onThisDay.quotes.length)];
+    ageElement.textContent = text;
 
     }else{
         const now = new Date();
         const Day = now.getDate();
         const Month = now.getMonth() + 1; // Months are zero-based, so we add 1
-        const onThisDay = onThisDayJSON[`${Day}/${Month}`]
-        if (onThisDay.length!=0){
-            var ageElement = document.getElementById("onThisDate");
-            var text=onThisDay[Math.floor(Math.random()*onThisDay.length)]
+        const onToday = onThisDay[`${Day}/${Month}`]
+        if (onToday.length!=0){
+            var text=onToday[Math.floor(Math.random()*onToday.length)];
             ageElement.textContent = text.year+":"+text.text;
         }
     }
-}
-setTimeout(updateOTDtext, 1000);
-setInterval(updateOTDtext, 1000*60);//update every minute
+ }
+updateOTDtext();
+setInterval(updateOTDtext,60*1000);//update every minute
