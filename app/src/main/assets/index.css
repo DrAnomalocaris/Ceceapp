@@ -2,6 +2,9 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Digital dream Fat Skew';
+    color: #888888;
+    pointer-events: none;
 }
 
 canvas {
@@ -39,20 +42,17 @@ canvas {
   left:50%;
   transform: translate(-50%, -50%); /* Center the element */
   align-items: center;
-  font-family: 'Digital Dream Fat Narrow';
-  color: #888888;
   pointer-events: none;
   text-align: center;
   font-size: 2vw;
   opacity:1;
+  line-height: 1.8em;
 
 
 }
 #nomCounter, #age {
     font-size: 40px; /* Adjust font size as needed */
-    color: #888; /* Light gray color */
     align-items: center;
-    font-family:"Digital dream";
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -96,8 +96,12 @@ canvas {
 
 }
 @font-face {
-  font-family: 'Digital Dream Fat Narrow';
+  font-family: 'Digital dream Fat Skew';
   src: url('Digital dream Fat Skew.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Digital dream Fat narrow';
+  src: url('DIGITALDREAMFATNARROW.ttf') format('truetype');
 }
 
 #centralClock{
@@ -106,8 +110,6 @@ canvas {
     top:50%;
     transform: translate(-50%, -50%); /* Center the element */
     transition: opacity .5s;
-    font-family: 'Digital Dream Fat Narrow';
-    color: #444444;
     z-index: 1;
     pointer-events: none;
 }
@@ -121,8 +123,12 @@ canvas {
 
 }
 #onThisDate {
-
+    font-family: 'Digital dream Fat narrow';
+    padding-top: 20px;
     font-size: 190%;
+    line-height: 1.5em;
+    font-size: clamp(30px, 20%, 45px);
+
 }
 
 #info {
@@ -132,10 +138,9 @@ canvas {
     transform: translate(0%, -100%);
     transition: opacity .5s;
     font-size: 2vw;
-    color: #444444;
     z-index: -1;
-    font-family: 'Digital Dream Fat Narrow';
-    pointer-events: none;
+    font-family: 'Digital dream Fat narrow';
+
 
 }
 
@@ -217,10 +222,11 @@ input:checked+.slider:before {
     left: 1% ;
     transition: opacity .5s;
     opacity:0;
+    background-color: #000000;
     cursor: pointer;
     font-size: 1.5vw;
-    color: #444444;
-    font-family: 'Digital Dream Fat Narrow';
+    z-index:100;
+
 }
 
 .noselect {

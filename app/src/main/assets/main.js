@@ -637,7 +637,7 @@ function updateOTDtext(){
     }
  }
 updateOTDtext();
-setInterval(updateOTDtext,60*1000);//update every minute
+setInterval(updateOTDtext,1000*60);//update every minute
 
 
 setTimeout(function (){
