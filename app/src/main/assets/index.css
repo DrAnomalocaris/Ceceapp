@@ -80,13 +80,15 @@ canvas {
     color: #ffffff;
     z-index: 1;
     pointer-events: none;
-
 }
 #clock{
     font-size: 22vw;
+    text-align: center;
 }
 #date {
     font-size: 3.9vw;
+    text-align: center;
+
 }
 #onThisDate {
 
