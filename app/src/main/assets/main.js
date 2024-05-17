@@ -299,14 +299,14 @@ function randomFood(){
     }
 
 }
-setInterval(randomFood, 100);
+setInterval(randomFood, 50);
 
 function drawFood() {
     for (var i = 0; i < food.length; i++) {
         if (food[i].size < 10) {
             food[i].size += 0.5;
         }
-        circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, .4)`);
+        circle(ctx, food[i].x, food[i].y, food[i].size, `rgba(${food[i].r}, ${food[i].g}, ${food[i].b}, 1)`);
     }
 }
 
