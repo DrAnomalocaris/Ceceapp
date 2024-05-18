@@ -1318,7 +1318,8 @@ const onThisDay ={
         {"year": 1630, "text": "Kiliaen van Rensselaer purchased land near present-day Albany, New York, to establish Rensselaerswyck, which became the most successful patroonship under the Dutch West India Company."},
         {"year": 1271, "text": "Crusades: The Knights Hospitaller surrendered the Krak des Chevaliers, a castle in present-day Syria, to the army of the Mamluk sultan Baybars."},
         {"year": 876, "text": "Abbasid forces decisively defeated the Saffarid emir Ya'qub ibn Laith, forcing the latter to halt his advance into Iraq."},
-        {"year": 217, "text": "Roman emperor Caracalla was assassinated near Harran and succeeded by his Praetorian Guard prefect Macrinus."}],
+        {"year": 217, "text": "Roman emperor Caracalla was assassinated near Harran and succeeded by his Praetorian Guard prefect Macrinus."},
+        {"year": 2013, "text": "🎶Ding Dong The Witch Is Dead🎵"}],
     "9": [{"year": 2005, "text": "Charles, Prince of Wales, married Camilla Parker Bowles in a civil ceremony at the Windsor Guildhall."},
         {"year": 1976, "text": "The first EMD\u00a0F40PH, Amtrak's most widespread diesel locomotive for many years, entered into service."},
         {"year": 1959, "text": "NASA announced the selection of the Mercury Seven, the first astronauts in Project Mercury."},
@@ -1356,7 +1357,9 @@ const onThisDay ={
         {"year": 1713, "text": "The main treaties of the Peace of Utrecht were signed in Utrecht in the Dutch Republic, helping to end the War of the Spanish Succession."},
         {"year": 1689, "text": "William\u00a0III and Mary\u00a0II were crowned joint sovereigns of England in a ceremony at Westminster Abbey."},
         {"year": 1544, "text": "Italian War of 1542\u20131546: French and Spanish forces fought a massive pitched battle in the Piedmont region of Italy."},
-        {"year": 1241, "text": "Mongol invasion of Europe: Mongol forces led by Batu Khan and Subutai defeated the army of King B\u00e9la\u00a0IV at the Battle of Mohi near the river Saj\u00f3, a key victory in their first invasion of Hungary."}],
+        {"year": 1241, "text": "Mongol invasion of Europe: Mongol forces led by Batu Khan and Subutai defeated the army of King B\u00e9la\u00a0IV at the Battle of Mohi near the river Saj\u00f3, a key victory in their first invasion of Hungary."},
+        {"year": 1913, "text": 'An official of the Nevill cricket ground said "It is not true that women are banned from the pavilion. Who do you think makes the teas?", in response the suffragettes burned that place, women were allowed in afterwards.🟩⬜🟪'}
+        ],
     "12": [{"year": 2014, "text": "A fire broke out in the hills near Valpara\u00edso, Chile, eventually destroying at least 2,500 homes and leaving approximately 11,000 people homeless."},
         {"year": 2012, "text": "The Guinea-Bissau military seized control in a coup amid a presidential election, later handing power to a transitional administration under Manuel Serifo Nhamadjo."},
         {"year": 1993, "text": "Bosnian War: NATO forces began Operation Deny Flight to enforce a no-fly zone over Bosnia and Herzegovina ordered by the United Nations Security Council."},
@@ -1434,7 +1437,9 @@ const onThisDay ={
         {"year": 1797, "text": "French Revolutionary Wars: British forces commanded by Lieutenant-General Ralph Abercromby invaded the Spanish colonial port of San Juan, Puerto Rico."},
         {"year": 1783, "text": "The Mechanical Turk, a fraudulent chess-playing \"machine\" by Wolfgang von Kempelen that was secretly controlled by a hidden human, began a tour of Europe."},
         {"year": 1362, "text": "Lithuanian Crusade: After a month-long siege, forces of the Teutonic Order captured and destroyed Kaunas Castle, which was defended by troops of the Grand Duchy of Lithuania."},
-        {"year": 1080, "text": "Canute\u00a0IV became King of Denmark upon the death of his brother Harald\u00a0III."}],
+        {"year": 1080, "text": "Canute\u00a0IV became King of Denmark upon the death of his brother Harald\u00a0III."},
+        {"year": 1986, "text": "Publication of a report from the Raegan administration confirming that they used Contras gangs in Nicaragua to trade weapons with Iran and import cocaine into the US to flood black neighborhood during the war on drugs."},
+        ],
     "18": [{"year": 2019, "text": "The United States Department of Justice released a redacted version of the Mueller report about the investigation of Russian influence on the U.S. presidential election to Congress and the public."},
         {"year": 1980, "text": "Robert Mugabe became the first prime minister of Zimbabwe, beginning a 37-year period in power."},
         {"year": 1958, "text": "Controversial American poet Ezra Pound was released from St.\u00a0Elizabeths Hospital, a psychiatric hospital in Washington, D.C., in which he had been incarcerated for twelve years."},
@@ -2454,7 +2459,8 @@ const onThisDay ={
         {"year": 1860, "text": "Seven months after the publication of Charles Darwin's On the Origin of Species, prominent British scientists and philosophers participated in an evolution debate at the Oxford University Museum of Natural History."},
         {"year": 1859, "text": "French acrobat Charles Blondin crossed Niagara Gorge, making him one of the world's most famous tightrope walkers."},
         {"year": 1598, "text": "Anglo-Spanish War: After a 15-day siege Spanish troops in San Juan, modern-day Puerto-Rico, surrendered to an English force under Sir George Clifford."},
-        {"year": 1559, "text": "During a jousting match, King Henry\u00a0II of France was mortally wounded when fragments of Gabriel Montgomery's lance pierced his eye."}]},
+        {"year": 1559, "text": "During a jousting match, King Henry\u00a0II of France was mortally wounded when fragments of Gabriel Montgomery's lance pierced his eye."}]
+        },
 "7":{
     "1": [{"year": 2008, "text": "Rioting erupted in Ulaanbaatar, Mongolia, over allegations of fraud surrounding the recent legislative election."},
         {"year": 1999, "text": "Legislative governance of Scotland was transferred from the Scottish Office in Westminster to the Scottish Parliament."},
@@ -4428,7 +4434,8 @@ const onThisDay ={
         {"year": 1859, "text": "British naturalist Charles Darwin's On the Origin of Species was first published, and sold out its initial print run on the first day."},
         {"year": 1750, "text": "Tarabai, the former regent of the Maratha Empire, had Rajaram\u00a0II, whom she had previously claimed to be her grandson, arrested as an impostor."},
         {"year": 1542, "text": "Anglo-Scottish Wars: England captured about 1,200 Scots with a victory at the Battle of Solway Moss."},
-        {"year": 1221, "text": "Mongol invasion of the Khwarazmian Empire: Genghis Khan defeated the renegade Khwarazmian prince Jalal al-Din at the Battle of the Indus."}],
+        {"year": 1221, "text": "Mongol invasion of the Khwarazmian Empire: Genghis Khan defeated the renegade Khwarazmian prince Jalal al-Din at the Battle of the Indus."},
+        ],
     "25": [{"year": 2013, "text": "English-Irish boy band One Direction released their third studio album Midnight Memories which debuted at number one on the Billboard 200 and became the best-selling album of 2013."},
         {"year": 1984, "text": "Band Aid, a supergroup consisting of more than 30 leading British and Irish pop musicians, recorded the song \"Do They Know It's Christmas?\" to raise money for famine relief in Ethiopia."},
         {"year": 1981, "text": "A group of Conservative Party members of parliament wrote a letter outlining their opposition to the economic policy of Margaret Thatcher leading to speculation over a split from the party by the Gang of 25."},
@@ -4509,7 +4516,8 @@ const onThisDay ={
         {"year": 1872, "text": "The first international football match took place at Hamilton Crescent, Glasgow, between Scotland and England."},
         {"year": 1853, "text": "Russian warships led by Pavel Nakhimov destroyed an Ottoman fleet of frigates at the Battle of Sinop, prompting France and the United Kingdom to enter the Crimean War."},
         {"year": 1803, "text": "An expedition led by Francisco Javier de Balmis departed A Coru\u00f1a, Spain, with the aim of vaccinating millions in South America and Asia against smallpox."},
-        {"year": 1700, "text": "Great Northern War: Swedish forces led by King Charles\u00a0XII defeated the Russian army at the Battle of Narva."}]},
+        {"year": 1700, "text": "Great Northern War: Swedish forces led by King Charles\u00a0XII defeated the Russian army at the Battle of Narva."}]
+        },
 "12":{
     "1": [{"year": 2019, "text": "Vivianne Miedema scored six goals and had four assists for Arsenal W.F.C. in their 11\u20131 victory over Bristol City W.F.C. that broke the record for the most goals scored in a FA Women's Super League match."},
         {"year": 1991, "text": "A referendum held to ratify the  Act of Declaration of Independence of Ukraine passed with more than 92 percent of the vote."},
@@ -4959,4 +4967,5 @@ const onThisDay ={
         {"year": 1862, "text": "The Battle of Stones River in Murfreesboro, Tennessee, began with an engagement in which both sides would suffer their highest casualty rates in the American Civil War."},
         {"year": 1857, "text": "Queen Victoria announced the choice of Ottawa, then a small logging town, to be the capital of the British colony of Canada."},
         {"year": 1775, "text": "American Revolutionary War: At the Battle of Quebec, British forces repulsed an attack by the Continental Army to capture Quebec City and enlist French Canadian support."},
-        {"year": 1759, "text": "Arthur Guinness signed a 9,000-year lease at \u00a345 per annum to the St. James's Gate Brewery in Dublin and began brewing Guinness."}]}} ;
+        {"year": 1759, "text": "Arthur Guinness signed a 9,000-year lease at \u00a345 per annum to the St. James's Gate Brewery in Dublin and began brewing Guinness."}]}
+} ;
