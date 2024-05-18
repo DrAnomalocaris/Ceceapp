@@ -144,7 +144,10 @@ canvas {
 }
 #onThisDate img{
     position:relative;
-    left: 25vw
+    object-fit: contain;
+    max-width: 70%;
+    max-height: 100%;
+
 }
 
 @font-face {
