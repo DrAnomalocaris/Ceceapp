@@ -21,7 +21,6 @@ canvas {
 }
 #black-curtain{
     position: fixed;
-    opacity:0;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,7 +28,8 @@ canvas {
     background-color: #000;
     transition: opacity 1s ease-in;
     z-index: 10;
-
+    font-family: 'Digital dream Fat Skew';
+    color: #777777;
 }
 
 #black-curtain img{
