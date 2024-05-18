@@ -127,10 +127,17 @@ canvas {
 #clock{
     font-size: 22vh;
     text-align: center;
+    color: #000;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #777;
+
 }
 #date {
-    font-size: 3.9vh;
+    font-size: 5vh;
     text-align: center;
+    color: #000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #777;
 
 }
 #onThisDate {
