@@ -145,8 +145,8 @@ canvas {
 #onThisDate img{
     position:relative;
     object-fit: contain;
-    max-width: 45%;
-    max-height: 100%;
+    height: 40vh;
+
 
 }
 

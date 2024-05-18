@@ -37,4 +37,6 @@ onThisDay['quotes']=['Cece is a <i>Caenorhabditis elegans</i> worm. They are a m
                      "If conditions are harsh, a growing <i>C. elegans</i> will enter a special stage before adulthood called dauer (german for enduring) where they can live up to a few months, compared going into adulthood where they would live for about 3 weeks.",
                      '<img src="quote_images/elegans_picturepng.png">',
                      '<img src="quote_images/elegans diagram.png">',
+                     'Cece wears a bright red bow,<br>Eating colors, watch her go!<br>In the code, she dances free,<br>Happy, tiny, full of glee.',
+                     '<img src="quote_images/202205_Nematode.svg">',
                      ]
