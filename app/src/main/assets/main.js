@@ -27,7 +27,7 @@ var maxTrail=100000;
 var showTrail=false;
 var quoteProbability=.25;
 var shakeFoodDistance=1;
-
+var maxFood = 1;
 
 /* IK Segment */
 
@@ -103,18 +103,18 @@ var IKChain = function(size, interval) {
 //   check cache and load existing worm
 //
 if (window.localStorage.hasOwnProperty('postsynaptic')) {
-  BRAIN.setup(
-    JSON.parse(window.localStorage.getItem('postsynaptic')),
-    window.localStorage.getItem('state'),
-  );
-  food = JSON.parse(window.localStorage.getItem('food'));
-  secondsAlive = window.localStorage.getItem('secondsAlive');
-  nomCounter = window.localStorage.getItem('nomCounter');
-  var chain = JSON.parse(window.localStorage.getItem('chain'));
-  console.log("localstorage: loaded from memory")
+    BRAIN.setup(
+        JSON.parse(window.localStorage.getItem('postsynaptic')),
+        window.localStorage.getItem('state'),
+    );
+    food = JSON.parse(window.localStorage.getItem('food'));
+    secondsAlive = window.localStorage.getItem('secondsAlive');
+    nomCounter = window.localStorage.getItem('nomCounter');
+    var chain = JSON.parse(window.localStorage.getItem('chain'));
+    console.log("localstorage: loaded from memory")
 } else {
-  BRAIN.setup();
-  console.log("localstorage: made new worm")
+    BRAIN.setup();
+    console.log("localstorage: made new worm")
 
 }
 
@@ -335,12 +335,12 @@ function randomFood(){
 
         food.push({ "x": x, "y": y,"size": 1,"r":r,"g":g,"b":b});
     }
-    if (food.length > 1000) {
+    if (food.length > maxFood) {
         food.splice(0, 1);
     }
 
 }
-setInterval(randomFood, 50);
+//setInterval(randomFood, 50);
 
 function drawFood() {
     for (var i = 0; i < food.length; i++) {
@@ -510,17 +510,17 @@ function draw() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     window.onresize = resize;
-    for (var i = 0; i < food.length; i++) {
-        food[i].x *= mx;
-        food[i].y *= my;
-    }
-    if (start == false) {//error when "resizing" first time as it is opening the page, this way it doesn't run on start
-        target.x *= mx;
-        target.y *= my;
+    //for (var i = 0; i < food.length; i++) {
+    //    food[i].x *= mx;
+    //    food[i].y *= my;
+    //}
+    //if (start == false) {//error when "resizing" first time as it is opening the page, this way it doesn't run on start
+    //    target.x *= mx;
+    //    target.y *= my;
 
-    }else {
-        start = false;
-    }
+    //}else {
+    //    start = false;
+    //}
 
 
 }());
