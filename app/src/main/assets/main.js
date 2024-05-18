@@ -27,7 +27,7 @@ var maxTrail=100000;
 var showTrail=false;
 var quoteProbability=.25;
 var shakeFoodDistance=1;
-var maxFood = 2000;
+var maxFood = 1000;
 
 /* IK Segment */
 
