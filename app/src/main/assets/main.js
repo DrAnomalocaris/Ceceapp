@@ -25,7 +25,7 @@ var secondsAlive=0;
 var trail=[];
 var maxTrail=10000;
 var showTrail=false;
-var quoteProbability=.25;
+var quoteProbability=1;
 var shakeFoodDistance=1;
 
 
@@ -667,6 +667,9 @@ function updateOTDtext(){
     if (Math.random()<quoteProbability){
     var text=onThisDay.quotes[Math.floor(Math.random()*onThisDay.quotes.length)];
     //var text=onThisDay.quotes[onThisDay.quotes.length - 1];
+    if (text.length<50){
+        text = `<p style="text-align: center; ">${text}</p>`
+    }
     ageElement.innerHTML = text;
 
     }else{
