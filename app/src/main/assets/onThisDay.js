@@ -1,5 +1,5 @@
-const onThisDay =
-{"1":{
+const onThisDay ={
+"1":{
     "1": [{"year": 2019, "text": "The NASA space probe New Horizons flew by the trans-Neptunian object Arrokoth, making it the farthest object visited by a spacecraft."},
         {"year": 1998, "text": "Argentinian physicist Juan Maldacena published a landmark paper initiating the study of AdS/CFT correspondence, which links string theory and quantum gravity."},
         {"year": 1965, "text": "The People's Democratic Party of Afghanistan, which later helped the country become a republic, was founded."},
@@ -2190,6 +2190,7 @@ const onThisDay =
         {"year": 1624, "text": "Thirty Years' War: France and the Dutch Republic concluded the Treaty of Compi\u00e8gne, a mutual defence alliance."},
         {"year": 1329, "text": "Byzantine\u2013Ottoman wars: The heavily armed Byzantine army was defeated by Ottoman forces at the Battle of Pelekanon."},
         {"year": 1190, "text": "Third Crusade: Frederick Barbarossa, Holy Roman Emperor, drowned in the Saleph River in Anatolia."},
+        {"year": 1054, "text": "A supernova (now called SN 1054) was observed by Chinese astronomers, it would have been the brightest object in the night sky besides the moon. What is left is now called the Crab nebula."},
         {"year": 731, "text": "Tatwine was consecrated  as Archbishop of Canterbury"}],
     "11": [{"year": 2008, "text": "Canadian prime minister Stephen Harper apologised to the First Nations for past governments' policies of forced assimilation."},
         {"year": 2001, "text": "Robert Edward Dyer was sentenced to 16 years' imprisonment for conducting a six-month-long letter-bomb campaign against the British supermarket chain Tesco."},
