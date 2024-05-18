@@ -25,7 +25,7 @@ var secondsAlive=0;
 var trail=[];
 var maxTrail=10000;
 var showTrail=false;
-var quoteProbability=1;
+var quoteProbability=0.25;
 var shakeFoodDistance=1;
 
 
