@@ -674,7 +674,7 @@ function updateOTDtext(){
         const Day = now.getDate();
         const currYear= now.getFullYear();
         const Month = now.getMonth() + 1; // Months are zero-based, so we add 1
-        const onToday = onThisDay[`${Day}/${Month}`]
+        const onToday = onThisDay[`${Month}`][`${Day}`]
         if (onToday.length!=0){
             var text=onToday[Math.floor(Math.random()*onToday.length)];
             var yearString = text.year;
@@ -691,7 +691,10 @@ setInterval(updateOTDtext,60*1000);//update every minute
 setTimeout(function (){
     var curtain = document.getElementById("black-curtain");
     curtain.style.opacity=0;
-    document.getElementById("black-curtain").remove();
+    setTimeout(function (){
+        document.getElementById("black-curtain").remove();
+       },
+       2000)
     },
     3000
 )
