@@ -16,16 +16,17 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000;
+  background-color: #000;
   z-index: -2;
 }
 #black-curtain{
     position: fixed;
+    opacity:0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000;
+    background-color: #000;
     transition: opacity 1s ease-in;
     z-index: 10;
 
@@ -146,9 +147,13 @@ canvas {
     left:0%;
     right:0%;
     line-height: 1.2em;
+    color:#000;
     font-size: clamp(1.5rem, 5vh,34rem);
     font-family: 'terminal';
+    text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777, 1px 1px 0 #777;
+
 }
+
 #onThisDate img{
     position:relative;
     object-fit: contain;
@@ -172,10 +177,11 @@ canvas {
     transform: translate(0%, -100%);
     transition: opacity .5s;
     font-size: 2vw;
-    z-index: -1;
+    z-index: 1;
     font-family: 'Digital dream Fat narrow';
-        pointer-events: none;
-
+    pointer-events: none;
+    color:#000;
+    text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777, 1px 1px 0 #777;
 }
 
 
