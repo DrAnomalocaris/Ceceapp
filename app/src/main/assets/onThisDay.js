@@ -1862,7 +1862,7 @@ const onThisDay ={
         {"year": 1863, "text": "American Civil War: General Ulysses S. Grant led his Army of the Tennessee across the Big Black River in preparation for the Siege of Vicksburg."},
         {"year": 1695, "text": "An earthquake measuring 7.8 struck Shanxi Province in northern China, resulting in at least 52,600 deaths."},
         {"year": 1388, "text": "At the Battle of Buir Lake, a Ming Chinese army led by general Lan Yu defeated the forces of T\u00f6g\u00fcs Tem\u00fcr, the Mongol khan of Northern Yuan."}],
-    "19": [{"year": 2018, "text": "The wedding of Prince Harry and Meghan Markle took place at St\u00a0George's Chapel in Windsor Castle, England."},
+    "19": [
         {"year": 2015, "text": "A corroded pipeline near Refugio State Beach, California, spilled 142,800 gallons of crude oil onto the Gaviota Coast."},
         {"year": 2010, "text": "In Bangkok, the Thai military concluded a week-long crackdown on widespread protests by forcing the surrender of opposition leaders."},
         {"year": 1997, "text": "The Sierra Gorda Biosphere, which encompasses the most ecologically diverse region in Mexico, was established as a result of grassroots efforts."},
