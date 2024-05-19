@@ -8,6 +8,7 @@ document.getElementById("centerButton").onclick = function() {
     target.y = window.innerHeight / 2;
 }
 */
+var pronouns = "she/they";
 var chainLength = 200;
 var facingDir = 0;
 var targetDir = 0;
