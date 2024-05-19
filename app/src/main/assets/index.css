@@ -136,9 +136,8 @@ canvas {
 #date {
     font-size: 5vh;
     text-align: center;
-    color: #000;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #777;
+    color:#555555;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 
 }
 #onThisDate {
@@ -147,10 +146,10 @@ canvas {
     left:0%;
     right:0%;
     line-height: 1.2em;
-    color:#000;
     font-size: clamp(1.5rem, 5vh,34rem);
     font-family: 'terminal';
-    text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777, 1px 1px 0 #777;
+    color:#555555;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 
 }
 
@@ -180,8 +179,8 @@ canvas {
     z-index: 1;
     font-family: 'Digital dream Fat narrow';
     pointer-events: none;
-    color:#000;
-    text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777, 1px 1px 0 #777;
+    color:#555555;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 
