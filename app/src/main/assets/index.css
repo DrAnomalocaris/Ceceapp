@@ -123,8 +123,40 @@ canvas {
     transition: opacity .5s;
     z-index: 1;
     pointer-events: none;
+    animation: shiftPositionClock 600s infinite; /* 120s for 2 minutes cycle */
 
 }
+
+
+
+@keyframes shiftPositionClock {
+
+  0% {
+    left:10%;
+    right:15%;
+    top:25%;
+    bottom:6%;
+  }
+  25% {
+    left:15%;
+    right:15%;
+    top:20%;
+    bottom:6%;
+  }
+  50% {
+    left:20%;
+    right:15%;
+    top:25%;
+    bottom:6%;
+  }
+  75% {
+    left:15%;
+    right:15%;
+    top:30%;
+    bottom:6%;
+  }
+}
+
 #clock{
     font-size: 22vh;
     text-align: center;
@@ -171,9 +203,8 @@ canvas {
 }
 #info {
     position: absolute;
-    top: 99%;
+    bottom: 2%;
     left: 1%;
-    transform: translate(0%, -100%);
     transition: opacity .5s;
     font-size: 2vw;
     z-index: 1;
@@ -181,7 +212,28 @@ canvas {
     pointer-events: none;
     color:#555555;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-++}
+    animation: shiftPositionInfo 600s infinite; /* 120s for 2 minutes cycle */
+}
+
+@keyframes shiftPositionInfo {
+
+  0% {
+    bottom:2%;
+    left: 1%;
+  }
+  25% {
+    bottom:6%;
+    left: 1%;
+  }
+  50% {
+    bottom:6%;
+    left: 4%;
+  }
+  75% {
+    bottom:2%;
+    left: 4%;
+  }
+}
 
 
 .switch {
@@ -276,3 +328,5 @@ input:checked+.slider:before {
     -ms-user-select: none;
     user-select: none;
 }
+
+
