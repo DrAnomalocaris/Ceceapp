@@ -170,6 +170,7 @@ canvas {
     text-align: center;
     color:#555555;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    text-shadow: -2px  0px 0 #000, 2px  0px 0 #000,  0px 2px 0 #000, 0x -2px 0 #000;
 
 }
 #onThisDate {
@@ -182,6 +183,7 @@ canvas {
     font-family: 'terminal';
     color:#555555;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    text-shadow: -2px  0px 0 #000, 2px  0px 0 #000,  0px 2px 0 #000, 0x -2px 0 #000;
 
 }
 
@@ -212,6 +214,7 @@ canvas {
     pointer-events: none;
     color:#555555;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    text-shadow: -2px  0px 0 #000, 2px  0px 0 #000,  0px 2px 0 #000, 0x -2px 0 #000;
     animation: shiftPositionInfo 600s infinite; /* 120s for 2 minutes cycle */
 }
 
